@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discord Zapret — скачать утилиту для обхода блокировки Discord в России</title>
+<meta name="google-site-verification" content="ЗАМЕНИТЬ_НА_КОД_ПРОВЕРКИ_GOOGLE">
+<meta name="description" content="Zapret — бесплатная утилита с открытым исходным кодом для обхода DPI-блокировок Discord и YouTube в России. Не требует VPN, не снижает скорость. Скачайте и забудьте о блокировках.">
+<meta name="keywords" content="discord zapret, обход блокировки дискорд, дискорд заблокирован, как обойти блокировку discord, скачать zapret, discord россия, обход блокировок, dpi обход, win divert">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Zapret Community">
+<meta name="theme-color" content="#6366f1">
+<link rel="canonical" href="https://zapretdiscord.sbs">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Discord Zapret — обход блокировки Discord в России без VPN">
+<meta property="og:description" content="Бесплатная утилита с открытым кодом для обхода DPI-блокировок Discord и YouTube. Работает на Windows 10/11, не снижает скорость.">
+<meta property="og:url" content="https://zapretdiscord.sbs">
+<meta property="og:site_name" content="Discord Zapret">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Discord Zapret — обход блокировки Discord в России">
+<meta name="twitter:description" content="Скачайте Zapret — бесплатную утилиту для обхода DPI-блокировок Discord и YouTube. Без VPN, без потери скорости.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 127.14 96.36' fill='%235865F2'><path d='M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z'/></svg>">
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"SoftwareApplication",
+"name":"Zapret for Discord & YouTube",
+"operatingSystem":"Windows 10, Windows 11",
+"applicationCategory":"Utilities",
+"description":"Бесплатная утилита с открытым исходным кодом для обхода DPI-блокировок Discord и YouTube в России. Работает на уровне драйвера Windows.",
+"offers":{
+"@type":"Offer",
+"price":"0",
+"priceCurrency":"RUB"
+},
+"author":{
+"@type":"Organization",
+"name":"Zapret Community",
+"url":"https://zapretdiscord.sbs"
+}
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#0a0a10;color:#e2e8f0;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:#0a0a10}
+::-webkit-scrollbar-thumb{background:#2d2d5e;border-radius:3px}
+a{color:#a5b4fc;text-decoration:none}
+.container{width:100%;max-width:1400px;margin:0 auto;padding:0 48px}
+@media(max-width:768px){.container{padding:0 20px}}
+
+/* Animated gradient mesh background */
+.background-mesh{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:hidden}
+.background-mesh .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.3;animation:blobMove 18s ease-in-out infinite alternate}
+.background-mesh .blob:nth-child(1){width:600px;height:600px;background:#4f46e5;top:-10%;left:-5%;animation-duration:18s;animation-delay:0s}
+.background-mesh .blob:nth-child(2){width:500px;height:500px;background:#7c3aed;bottom:-10%;right:-5%;animation-duration:22s;animation-delay:-4s}
+.background-mesh .blob:nth-child(3){width:400px;height:400px;background:#2563eb;top:40%;left:60%;animation-duration:20s;animation-delay:-8s;opacity:.15}
+.background-mesh .blob:nth-child(4){width:350px;height:350px;background:#6366f1;top:60%;left:10%;animation-duration:16s;animation-delay:-12s;opacity:.12}
+@keyframes blobMove{0%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.05)}66%{transform:translate(-20px,20px) scale(.95)}100%{transform:translate(30px,-40px) scale(1.02)}}
+
+/* Particle canvas layer */
+#particles-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
+
+/* Grid overlay */
+.grid-overlay{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;
+background-image:linear-gradient(rgba(99,102,241,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.03) 1px,transparent 1px);
+background-size:80px 80px;animation:gridPulse 6s ease-in-out infinite alternate}
+@keyframes gridPulse{0%{opacity:.5}100%{opacity:1}}
+
+/* Floating logos */
+.float-logos{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:hidden}
+.float-logo{position:absolute;animation:floatAround 20s ease-in-out infinite}
+.float-logo.f1{width:300px;top:15%;left:-5%;animation-duration:22s;animation-delay:0s}
+.float-logo.f2{width:200px;bottom:10%;right:-3%;animation-duration:28s;animation-delay:-7s}
+.float-logo.f3{width:150px;top:55%;left:70%;animation-duration:18s;animation-delay:-14s}
+@keyframes floatAround{0%{transform:translate(0,0) rotate(0deg)}25%{transform:translate(40px,-30px) rotate(5deg)}50%{transform:translate(-20px,40px) rotate(-3deg)}75%{transform:translate(30px,20px) rotate(4deg)}100%{transform:translate(0,0) rotate(0deg)}}
+
+/* Header */
+header{position:fixed;top:0;width:100%;background:rgba(10,10,16,.88);backdrop-filter:blur(16px) saturate(1.2);border-bottom:1px solid rgba(99,102,241,.15);z-index:100;animation:headerIn .8s ease-out}
+@keyframes headerIn{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-size:22px;font-weight:800;background:linear-gradient(135deg,#818cf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.5px}
+.logo span{-webkit-text-fill-color:#e2e8f0}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:#94a3b8;font-size:13px;font-weight:500;transition:.3s;padding:8px 16px;border-radius:8px}
+.nav-links a:hover{color:#e2e8f0;background:rgba(99,102,241,.08)}
+.nav-btn{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff!important;padding:8px 22px!important;border-radius:10px;font-weight:600}
+.nav-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(99,102,241,.4);background:rgba(99,102,241,.08)!important}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:flex-start;position:relative;z-index:2;padding:0}
+.hero .container{padding-top:100px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.hero-content{position:relative;z-index:1;animation:fadeUp 1s ease-out}
+@keyframes fadeUp{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+.hero-logo{position:sticky;top:120px;display:flex;justify-content:center;align-items:center;animation:fadeUp 1s ease-out .3s both}
+.hero-logo svg{width:clamp(200px,20vw,380px);height:auto;opacity:.25;filter:drop-shadow(0 0 60px rgba(88,101,242,.06));animation:discordGlow 4s ease-in-out infinite}
+@keyframes discordGlow{0%{transform:translateY(0) scale(1);opacity:.2;filter:drop-shadow(0 0 40px rgba(88,101,242,.05))}50%{transform:translateY(-10px) scale(1.02);opacity:.35;filter:drop-shadow(0 0 100px rgba(88,101,242,.15))}100%{transform:translateY(0) scale(1);opacity:.2;filter:drop-shadow(0 0 40px rgba(88,101,242,.05))}}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.12);color:#a5b4fc;border:1px solid rgba(99,102,241,.25);padding:6px 18px;border-radius:20px;font-size:13px;font-weight:500;margin-bottom:28px;animation:pulseBadge 3s ease-in-out infinite}
+@keyframes pulseBadge{0%,100%{opacity:1}50%{opacity:.6}}
+.hero h1{font-size:clamp(36px,5vw,72px);line-height:1.06;margin-bottom:20px;font-weight:900;letter-spacing:-1.5px}
+.hero h1 span{background:linear-gradient(135deg,#818cf8,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:clamp(15px,1.3vw,19px);color:#64748b;line-height:1.75;margin-bottom:36px;max-width:640px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:12px;font-size:16px;font-weight:600;transition:.3s;cursor:pointer;border:none;font-family:inherit}
+.btn-primary{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(99,102,241,.45)}
+.btn-outline{background:transparent;color:#e2e8f0;border:1.5px solid #1e293b}
+.btn-outline:hover{border-color:#6366f1;color:#a5b4fc;transform:translateY(-2px)}
+.hero-stats{display:flex;gap:60px;margin-top:52px;flex-wrap:wrap}
+.hero-stat{text-align:left;animation:statIn .8s ease-out forwards;opacity:0}
+.hero-stat:nth-child(1){animation-delay:.2s}
+.hero-stat:nth-child(2){animation-delay:.4s}
+.hero-stat:nth-child(3){animation-delay:.6s}
+@keyframes statIn{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+.hero-stat-num{font-size:clamp(28px,3vw,38px);font-weight:800;color:#e2e8f0}
+.hero-stat-label{font-size:13px;color:#475569;margin-top:4px;font-weight:500}
+
+/* Sections */
+section{padding:80px 0;position:relative;z-index:2}
+.section-label{display:inline-block;color:#818cf8;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}
+.section-title{font-size:clamp(28px,3.2vw,48px);font-weight:800;margin-bottom:20px;letter-spacing:-.5px;line-height:1.1}
+.section-desc{color:#64748b;font-size:clamp(15px,1.2vw,18px);line-height:1.8;max-width:720px}
+
+/* About */
+#about{background:rgba(10,10,16,.5);border-top:1px solid rgba(99,102,241,.06);border-bottom:1px solid rgba(99,102,241,.06)}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:28px;margin-top:48px}
+.about-card{background:rgba(16,16,28,.6);border:1px solid rgba(99,102,241,.1);border-radius:20px;padding:40px;transition:.4s;backdrop-filter:blur(8px)}
+.about-card:hover{border-color:rgba(99,102,241,.3);transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,.4)}
+.about-card .icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:rgba(99,102,241,.12);margin-bottom:20px}
+.about-card .icon svg{width:24px;height:24px;color:#818cf8}
+.about-card h3{font-size:clamp(17px,1.3vw,20px);font-weight:700;margin-bottom:12px}
+.about-card p{font-size:clamp(14px,1vw,16px);color:#64748b;line-height:1.8}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:.8s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* How */
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:28px;margin-top:48px}
+.how-step{background:rgba(16,16,28,.6);border:1px solid rgba(99,102,241,.1);border-radius:20px;padding:36px;position:relative;backdrop-filter:blur(8px);transition:.3s}
+.how-step:hover{transform:translateY(-4px)}
+.how-step .icon{width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);margin-bottom:16px;box-shadow:0 4px 15px rgba(99,102,241,.3)}
+.how-step .icon svg{width:20px;height:20px;color:#fff}
+.how-step h3{font-size:clamp(16px,1.2vw,19px);font-weight:700;margin-bottom:12px}
+.how-step p{font-size:clamp(14px,1vw,16px);color:#64748b;line-height:1.8}
+.how-step code{background:rgba(99,102,241,.1);padding:2px 10px;border-radius:5px;font-size:13px;color:#a5b4fc;font-family:'Inter',monospace}
+
+/* FAQ */
+#faq{background:rgba(10,10,16,.5);border-top:1px solid rgba(99,102,241,.06);border-bottom:1px solid rgba(99,102,241,.06)}
+.faq-list{margin:48px auto 0}
+.faq-item{border-bottom:1px solid rgba(99,102,241,.1);padding:24px 0}
+.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:clamp(15px,1.15vw,18px);font-weight:600;gap:16px;line-height:1.5}
+.faq-q .plus{color:#475569;font-size:24px;font-weight:300;transition:.4s;flex-shrink:0;width:28px;text-align:center}
+.faq-a{max-height:0;overflow:hidden;transition:.5s cubic-bezier(.22,1,.36,1);font-size:clamp(14px,1vw,16px);color:#64748b;line-height:1.9}
+.faq-a.open{max-height:800px;padding-top:18px}
+.faq-item.active .faq-q .plus{transform:rotate(45deg);color:#818cf8}
+
+/* Download */
+#download{text-align:center;z-index:2;position:relative;padding:100px 0}
+.download-btn{display:inline-flex;align-items:center;gap:14px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;padding:20px 56px;border-radius:16px;font-size:clamp(17px,1.3vw,21px);font-weight:700;transition:.3s;font-family:inherit;border:none;cursor:pointer;margin-top:8px}
+.download-btn:hover{transform:translateY(-3px);box-shadow:0 20px 60px rgba(99,102,241,.5)}
+
+/* Footer */
+footer{text-align:center;padding:32px;border-top:1px solid rgba(99,102,241,.06);color:#334155;font-size:13px;position:relative;z-index:2}
+
+/* Mobile */
+@media(max-width:768px){
+section{padding:60px 0}
+.hero .container{padding:100px 20px 60px;grid-template-columns:1fr}
+.hero-logo{display:none}
+.hero-stats{gap:32px}
+.hero-stat{text-align:center}
+.nav-links a:not(.nav-btn){display:none}
+.about-grid,.how-grid{grid-template-columns:1fr}
+.about-card,.how-step{padding:28px}
+#download{padding:60px 0}
+.download-btn{padding:16px 36px}
+}
+@media(min-width:1400px){
+.about-grid{grid-template-columns:repeat(3,1fr)}
+.how-grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="background-mesh">
+<div class="blob"></div>
+<div class="blob"></div>
+<div class="blob"></div>
+<div class="blob"></div>
+</div>
+<div class="grid-overlay"></div>
+<div class="float-logos">
+<svg class="float-logo f1" viewBox="0 0 127.14 96.36" fill="#5865F2" opacity=".04"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg>
+<svg class="float-logo f2" viewBox="0 0 127.14 96.36" fill="#5865F2" opacity=".025"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg>
+<svg class="float-logo f3" viewBox="0 0 127.14 96.36" fill="#5865F2" opacity=".03"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg>
+</div>
+<canvas id="particles-canvas"></canvas>
+
+<header>
+<nav class="container">
+<div class="logo">Discord<span>Zapret</span></div>
+<div class="nav-links">
+<a href="#about">О проекте</a>
+<a href="#install">Установка</a>
+<a href="#faq">FAQ</a>
+<a href="dowload.html" class="nav-btn">Скачать</a>
+</div>
+</nav>
+</header>
+
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<div class="hero-badge">· Open Source</div>
+<h1>Discord снова работает<br><span>без VPN и без тормозов</span></h1>
+<p>Discord заблокирован в России? Discord Zapret — это готовая программа для обхода DPI-блокировок провайдеров. Всё уже вшито внутрь: драйвер WinDivert, стратегии обхода, конфигурации. Ничего качать дополнительно не нужно. Просто запустил, нажал «ЗАПУСТИТЬ» — и Discord снова работает. Никаких сложных настроек, никакой регистрации, никакого ожидания.</p>
+<div class="hero-btns">
+<a href="dowload.html" class="btn btn-primary">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+Скачать Zapret
+</a>
+<a href="#about" class="btn btn-outline">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 16 12 12 12 8"/><line x1="12" y1="12" x2="16" y2="12"/></svg>
+Как это работает
+</a>
+</div>
+<div class="hero-stats">
+<div class="hero-stat"><div class="hero-stat-num">98%</div><div class="hero-stat-label">Эффективность обхода</div></div>
+<div class="hero-stat"><div class="hero-stat-num">&lt;0.3ms</div><div class="hero-stat-label">Дополнительная задержка</div></div>
+<div class="hero-stat"><div class="hero-stat-num">100%</div><div class="hero-stat-label">Совместимость с Windows</div></div>
+</div>
+</div>
+<div class="hero-logo">
+<svg viewBox="0 0 127.14 96.36" fill="#5865F2">
+<defs>
+<linearGradient id="discordGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#5865F2">
+<animate attributeName="stop-color" values="#5865F2;#7c3aed;#6366f1;#5865F2" dur="6s" repeatCount="indefinite"/>
+</stop>
+<stop offset="100%" stop-color="#818cf8">
+<animate attributeName="stop-color" values="#818cf8;#a78bfa;#8b5cf6;#818cf8" dur="6s" repeatCount="indefinite"/>
+</stop>
+</linearGradient>
+</defs>
+<path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z" fill="url(#discordGrad)"/>
+</svg>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container reveal">
+<div class="section-label">О проекте</div>
+<h2 class="section-title">Как работает обход блокировки<br>Discord в России</h2>
+<p class="section-desc">VPN-сервисы замедляют интернет и регулярно блокируются. Discord Zapret — это готовая программа, которая не требует установки. Внутри уже есть всё необходимое: драйвер WinDivert, 20+ стратегий обхода, конфигурации. Программа сама выбирает оптимальную стратегию — достаточно нажать одну кнопку. Никаких батников, никаких папок C:\zapret, никаких ручных настроек.</p>
+<div class="about-grid">
+<div class="about-card">
+<div class="icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
+</div>
+<h3>Готовая программа — ничего лишнего</h3>
+<p>Всё что нужно для обхода DPI-блокировок уже внутри одного exe-файла: драйвер WinDivert, набор из 20+ стратегий обхода, TLS-сертификаты, конфигурации. Программа автоматически выбирает оптимальную стратегию. Никаких батников, никаких дополнительных скачиваний, никакой установки в C:\zapret. Просто скачал, запустил, нажал «ЗАПУСТИТЬ».</p>
+</div>
+<div class="about-card">
+<div class="icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+</div>
+<h3>Автозапуск одним кликом — никаких сложных настроек</h3>
+<p>Программа не требует установки в C:\zapret или ручного запуска батников. Просто откройте Discord Zapret.exe и нажмите «ЗАПУСТИТЬ». Внутри уже встроены все компоненты: драйвер WinDivert, стратегии обхода, конфигурации. Минимум действий — максимум результата.</p>
+</div>
+<div class="about-card">
+<div class="icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+</div>
+<h3>Портативная — не оставляет следов</h3>
+<p>Discord Zapret не требует установки. Просто запустили, нажали кнопку — работает. Закрыли — программа не оставляет процессов в фоне. Удаляется простым удалением файла. Никаких записей в реестре, никакого мусора в системе. Идеально если не хотите ничего менять в системе — просто скачали, воспользовались, удалили.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="install">
+<div class="container reveal">
+<div class="section-label">Установка</div>
+<h2 class="section-title">Установка Zapret на Windows 10 и Windows 11</h2>
+<p class="section-desc">Установка не требуется. Просто скачайте программу, запустите и нажмите «Запустить». Discord и YouTube заработают без VPN и без лишних настроек.</p>
+<div class="how-grid">
+<div class="how-step">
+<div class="icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+</div>
+<h3>Шаг 1. Скачайте программу</h3>
+<p>Нажмите кнопку «Скачать» — внутри уже есть всё необходимое: драйвер WinDivert, стратегии обхода, конфигурации. Никаких регистраций, смс и ожидания. Просто сохраните файл на рабочий стол.</p>
+</div>
+<div class="how-step">
+<div class="icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+</div>
+<h3>Шаг 2. Запустите программу</h3>
+<p>Кликните по файлу дважды — откроется окно с кнопкой «Запустить». Программа автоматически выберет оптимальную стратегию обхода. Рекомендуется запускать от имени администратора (правый клик → «Запуск от имени администратора») для установки драйвера.</p>
+<p style="margin-top:8px;color:#f59e0b;font-size:13px">⚠ Антивирус может ругаться на драйвер WinDivert — это ложное срабатывание. Отключите антивирус на время использования или добавьте программу в исключения.</p>
+</div>
+<div class="how-step">
+<div class="icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+</div>
+<h3>Шаг 3. Нажмите «Запустить»</h3>
+<p>В открывшемся окне нажмите кнопку «ЗАПУСТИТЬ» — обход блокировки включится мгновенно. Discord и YouTube снова работают. Для остановки нажмите «ОСТАНОВИТЬ». Программа портативная — не оставляет следов в системе после удаления.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="faq">
+<div class="container reveal">
+<div class="section-label">FAQ</div>
+<h2 class="section-title">Часто задаваемые вопросы<br>об обходе блокировок</h2>
+<p class="section-desc">Мы собрали самые популярные вопросы от пользователей, которые впервые сталкиваются с обходом DPI-блокировок в России. Если вы не нашли ответа — напишите в чат сообщества.</p>
+<div class="faq-list">
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFAQ(this)">Это безопасно? Могут ли украсть мои данные или пароли от Discord?<span class="plus">+</span></div>
+<div class="faq-a">Абсолютно безопасно. Discord Zapret — это просто графическая оболочка для open-source утилиты zapret (исходный код доступен на GitHub, любой может проверить). Программа работает исключительно локально, не отправляет данные на сторонние серверы и не собирает логи. Все сообщения в Discord защищены сквозным шифрованием (TLS) — программа не расшифровывает трафик, она только технически модифицирует заголовки TCP-пакетов, чтобы DPI-система провайдера не могла определить, что это Discord или YouTube.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFAQ(this)">Чем Discord Zapret отличается от обычного VPN? Что лучше выбрать?<span class="plus">+</span></div>
+<div class="faq-a">Принципиальная разница. VPN шифрует трафик и гонит через сервер в другой стране — скорость падает в 2-3 раза, а сервер могут заблокировать. Discord Zapret не шифрует и не перенаправляет трафик. Он просто «чистит» пакеты, убирая признаки Discord и YouTube, прямо на вашем компьютере. Трафик идёт напрямую — без посредников, без потери скорости, без риска блокировки сервера. Для обхода блокировок Zapret эффективнее и быстрее любого VPN.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFAQ(this)">Нужно ли устанавливать драйвер или что-то настраивать?<span class="plus">+</span></div>
+<div class="faq-a">Всё уже встроено в программу. Просто скачайте Discord Zapret.exe, запустите двойным кликом и нажмите «ЗАПУСТИТЬ». Драйвер WinDivert, стратегии обхода и конфигурации находятся внутри exe-файла — ничего дополнительно качать не нужно. Рекомендуется запускать от имени администратора при первом использовании для установки драйвера в систему.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFAQ(this)">Перестанет ли работать после обновления Windows?<span class="plus">+</span></div>
+<div class="faq-a">Как правило, обновления Windows не влияют на работу. В редких случаях после крупного обновления может потребоваться перезапуск программы от имени администратора, чтобы переустановить драйвер. Если Discord всё равно не работает — просто перезапустите Discord Zapret.exe и нажмите «ЗАПУСТИТЬ». Новая версия программы обычно не требуется.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFAQ(this)">Почему нужны права администратора?<span class="plus">+</span></div>
+<div class="faq-a">Для установки драйвера WinDivert, который перехватывает пакеты на уровне ядра Windows. Это стандартное требование для любого ПО, работающего с сетевым стеком (фаерволы, VPN, снифферы). Без прав администратора Windows не даст программе доступ к сетевому стеку.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFAQ(this)">Как полностью удалить программу? Остаются ли следы?<span class="plus">+</span></div>
+<div class="faq-a">Программа портативная — просто удалите файл Discord Zapret.exe. Если вы запускали её от администратора, драйвер WinDivert останется в системе, но он неактивен и не влияет на работу. Для полного удаления драйвера откройте программу и нажмите «ОСТАНОВИТЬ» — драйвер выгрузится. После этого можете удалять exe-файл. Никаких записей в реестре или мусора в системе не остаётся.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFAQ(this)">Работает ли программа с YouTube?<span class="plus">+</span></div>
+<div class="faq-a">Да, Discord Zapret автоматически выбирает универсальную стратегию, которая снимает блокировки и для Discord, и для YouTube одновременно. Никаких дополнительных настроек не требуется — просто нажмите «ЗАПУСТИТЬ».</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="download">
+<div class="container reveal">
+<div class="section-label">Скачать</div>
+<h2 class="section-title">Готовы попробовать?</h2>
+<p style="color:#64748b;margin-bottom:24px;font-size:16px">Скачайте готовую программу — Discord и YouTube снова заработают через 10 секунд. Без VPN, без регистрации, без установки.</p>
+<a href="dowload.html" class="download-btn">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+Скачать Zapret
+</a>
+<p style="color:#334155;margin-top:14px;font-size:13px">Windows 10 / 11 · Портативная · Без установки · Версия 2.0</p>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Discord Zapret. All rights reserved.</p>
+</footer>
+
+<script>
+function toggleFAQ(el){
+const item=el.parentElement;
+const answer=el.nextElementSibling;
+item.classList.toggle('active');
+answer.classList.toggle('open');
+}
+
+// Scroll reveal
+const observer=new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('visible')}
+});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// Particles
+const canvas=document.getElementById('particles-canvas');
+const ctx=canvas.getContext('2d');
+let w,h;
+function resize(){w=canvas.width=innerWidth;h=canvas.height=innerHeight}
+resize();addEventListener('resize',resize);
+
+const particles=[];
+for(let i=0;i<90;i++){
+particles.push({
+x:Math.random()*w,y:Math.random()*h,
+s:Math.random()*1.8+0.5,
+vx:(Math.random()-0.5)*0.3,
+vy:(Math.random()-0.5)*0.3,
+o:Math.random()*0.5+0.1,
+g:Math.random()*0.004+0.002,
+baseO:Math.random()*0.5+0.1
+});
+}
+
+function draw(){
+ctx.clearRect(0,0,w,h);
+for(let p of particles){
+p.x+=p.vx;p.y+=p.vy;
+if(p.x<0||p.x>w||p.y<0||p.y>h){
+p.x=Math.random()*w;p.y=Math.random()*h;
+}
+p.o+=p.g;
+if(p.o>0.6||p.o<0.05)p.g*=-1;
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.s,0,Math.PI*2);
+ctx.fillStyle=`rgba(99,102,241,${p.o})`;
+ctx.fill();
+}
+// connections
+for(let i=0;i<particles.length;i++){
+for(let j=i+1;j<particles.length;j++){
+const dx=particles[i].x-particles[j].x;
+const dy=particles[i].y-particles[j].y;
+const dist=Math.sqrt(dx*dx+dy*dy);
+if(dist<150){
+const alpha=(1-dist/150)*0.1;
+ctx.beginPath();
+ctx.moveTo(particles[i].x,particles[i].y);
+ctx.lineTo(particles[j].x,particles[j].y);
+ctx.strokeStyle=`rgba(99,102,241,${alpha})`;
+ctx.lineWidth=0.5;
+ctx.stroke();
+}
+}
+}
+requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body>
+</html>
